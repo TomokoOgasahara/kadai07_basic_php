@@ -6,22 +6,24 @@ error_reporting(E_ALL);
 
 
 $name = $_POST["name"];
-$email = $_POST["email"];
+$depart = $_POST["depart"];
+$star1 = $_POST["star1"];
+$star2 = $_POST["star2"];
+$star3 = $_POST["star3"];
 $memo = $_POST["memo"];
 $c = ",";
-$str = $name.$c.$email.$c.$memo; //aaaa,bbbb,cccc
+$str = $name.$c.$depart.$c.$star1.$c.$star2.$c.$star3.$c.$memo;
 
 echo $str;
 
 $file = fopen("data.csv", "a");
 
-fwrite($file, $str."\n");
+fwrite($file, $str. "\n");
 fclose($file);
 
 header("Location: index.php");
 exit;
 ?>
-
 
 <html>
 <head>
